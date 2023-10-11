@@ -41,7 +41,7 @@ export default function Landing() {
       setLoading(true);
       try {
         const response = await axios.post(
-          `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${location}&days=${day}&aqi=no&alerts=no`
+          `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=${location}&days=${day}&aqi=no&alerts=no`
         );
         setCurrentLocation(response.data.location.name);
         setData(response.data.forecast.forecastday);
@@ -61,7 +61,7 @@ export default function Landing() {
     const fetchData = async () => {
       try {
         const response = await axios.post(
-          `http://api.weatherapi.com/v1/forecast.json?key=${
+          `https://api.weatherapi.com/v1/forecast.json?key=${
             process.env.REACT_APP_API_KEY
           }&q=${location ? location : "london"}&days=${
             day ? day : 7
